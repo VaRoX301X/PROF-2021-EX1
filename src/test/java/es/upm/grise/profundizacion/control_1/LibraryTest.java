@@ -15,7 +15,7 @@ public class LibraryTest {
 
 		// Compruebo que me devuelve el libro y no una excepción
 		assertNotNull(library.getBook("libro1"));
-
+		assertEquals(libro1, library.getBook("libro1"));
 		// compruebo Excepcion de libro repetido
  		assertThrows(DuplicatedBookException.class, () -> library.addBook(libro1));
 
@@ -32,7 +32,7 @@ public class LibraryTest {
 
 		// Compruebo que existe el libro
 		assertNotNull(library.getBook("libro1"));
-
+		assertEquals(libro1, library.getBook("libro1"));
 
 		// Borro el libro 1 y compruebo que no existe con excepcion de libro no existente
 		library.removeBook(libro1);
